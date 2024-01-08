@@ -1,0 +1,61 @@
+<div class="container title ">
+  <h2 class="title ">Transactions</h2>
+</div>
+<div class="container a mt-3 ">
+
+  <div class="b p-4 mb-2">
+    <input class="s" (keyup)="applyFilter($event)" type="text" placeholder="Search">
+    <table mat-table matSort (matSortChange)="announceSortChange($event)" [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by Id">
+          Id
+        </th>
+        <td class="d" mat-cell *matCellDef="let element">{{ element.Id }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by amount">Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by date">Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="sender_SSN">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by sender_SSN.SSN">Sender SSN
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.sender_SSN.SSN }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="reciever_details">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by reciever_details">Receiver
+          SSN</th>
+        <td mat-cell *matCellDef="let element">{{ element.reciever_details }}</td>
+      </ng-container>
+
+
+
+
+
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click)="({})" [class.demo-row-is-clicked]="" *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+
+
+
+    <mat-paginator (page)="onPaginateChange($event)" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+      aria-label="Select page ">
+    </mat-paginator>
+
+
+  </div>
+</div>

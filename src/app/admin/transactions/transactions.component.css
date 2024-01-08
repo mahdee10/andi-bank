@@ -1,0 +1,82 @@
+.title {
+  text-align: center;
+}
+
+h2 {
+  font-family: "danske_humanMediumIt", serif;
+  font-weight: bolder;
+}
+
+.cent {
+  margin: 0 auto !important;
+}
+
+.tables {
+  height: 80vh
+}
+
+table {
+  background-color: white;
+  color: #d8d9d9;
+  border-collapse: collapse;
+  background-color: transparent;
+  width: 90%;
+  border-radius: 3%;
+  border-radius: 30% !important;
+}
+
+table th {
+  border: none;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+table thead {
+  background-color: #f5f8fa;
+}
+
+tr td {
+  padding: 20px;
+  border: none;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+mat-paginator {
+  background-color: transparent;
+
+}
+
+.b {
+  margin: 0 auto;
+  border-radius: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background: #1488CC;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.s {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+  color: white !important;
+  font-family: "Open Sans", sans-serif;
+}
+
+.s::placeholder {
+  color: white;
+}
+
+.a {
+  margin-bottom: 40px !important;
+}

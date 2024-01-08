@@ -1,0 +1,77 @@
+.info,
+.info1
+.info2{
+    background-color: #c3e0eb;
+    color: #002337;
+    text-align: center;
+}
+.border{
+    margin: 0.3px;
+    border: none !important;
+}
+.info p
+.info1 p,
+.info2 p{
+    line-height: 2;
+    font-size: 1.1rem;
+}
+.info1{
+    background-color: #fef6ed;
+}
+.info2{
+    background-color: #e7f1f7;
+}
+.call{
+   width: 100%; 
+   height: 100%;
+   padding-left: 6px;
+}
+
+.btn{
+    background-color: #f0f7fa;
+    border: #c3d0d6 1px solid;
+}
+.btn:hover {
+
+    background-color: #d0e3ea;
+
+  }
+
+  h2{
+    font-family: "danske_humanMediumIt",serif;
+    font-size: 2.7rem;
+}
+
+
+/* .container .nav{
+    justify-content: center;
+} */
+
+h1{
+    text-align: center;
+    font-family: "danske_humanMediumIt",serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #002337;
+    font-size: 3rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px black; 
+  }
+
+/* .card{
+    overflow: hidden;
+}
+img{
+    overflow: hidden;
+}
+  
+
+  .card:hover img {
+    transform: scale(1.1);
+  } */
+
+  .card:hover{
+    transform: scale(1.05);
+  }

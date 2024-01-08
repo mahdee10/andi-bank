@@ -1,0 +1,110 @@
+<div class="container px-4">
+    <h2>Loan Request Details</h2>
+</div>
+
+<div class="container p-4 ">
+    <div class="row">
+        <div class="col-6  p-2">
+            <div class="info p-3">
+
+
+                <span class="label">SSN:</span>
+                <br>
+                <span class="m">
+
+                    {{ssn}}
+                </span>
+                <br>
+                <span class="label">Name:</span>
+                <br>
+                <span class="m">
+
+                    {{name}}
+                </span>
+            </div>
+        </div>
+
+        <div class="col-6  p-2">
+            <div class="info p-3">
+
+
+                <span class="label">Email:</span>
+                <br>
+                <span class="m">
+
+                    {{email}}
+                </span>
+                <br>
+                <span class="label">Balance:</span>
+                <br>
+                <span class="m">
+
+                    ${{balance}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="container p-4 ">
+    <div class="row">
+        <div class="col-4  p-2">
+            <div class="info p-3">
+
+                <h3>Amount</h3>
+
+
+                <span class="m">
+
+                    ${{amount}}
+                </span>
+            </div>
+        </div>
+
+        <div class="col-4  p-2">
+            <div class="info p-3">
+
+                <h3>Duration</h3>
+
+                <span class="m">
+
+                    {{duration}}
+                </span>
+            </div>
+        </div>
+
+
+        <div class="col-4  p-2">
+            <div class="info p-3">
+
+                <h3>Payment Before</h3>
+
+                <span class="m">
+
+                    {{paid_before}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div [hidden]="!noResponse" class="container p-4 but">
+    <button (click)="update(1)" class="btn btn-primary btn1">Accept</button>
+    <button (click)="update(0)" class="btn btn-primary btn2">Reject</button>
+</div>
+
+<div [hidden]="!accepted" class="container p-4 but">
+    <button disabled class="btn btn-primary btn1">Loan was Accepted</button>
+</div>
+
+<div [hidden]="!rejected" class="container p-4 but">
+    <button disabled class="btn btn-primary btn1">Loan was Rejected</button>
+</div>

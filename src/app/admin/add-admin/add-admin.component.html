@@ -1,0 +1,85 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+  <div class="text-center">
+    <h2>Add Admin</h2>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="container mb-5 t">
+  <div class="f p-3">
+
+    <form class="register-form m-4" [formGroup]="createAdmin" (ngSubmit)="onRegister()">
+
+      <div class="row ">
+
+
+        <mat-form-field class="example-full-width text-container" appearance="outline">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="a_id" required>
+          <mat-icon matSuffix>person_search</mat-icon>
+        </mat-form-field>
+
+
+
+        <mat-form-field class="example-full-width text-container" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" required>
+          <mat-icon matSuffix>face</mat-icon>
+          <mat-error *ngIf="createAdmin.get('name').touched">
+            Enter only characters
+          </mat-error>
+        </mat-form-field>
+
+
+
+      </div>
+
+
+
+      <div class="row ">
+
+        <mat-form-field class="example-full-width text-container" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="createAdmin.get('email').hasError('required') || createAdmin.get('email').touched">
+            Enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width text-container" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="atleast 8 digits" formControlName="password" [type]="hide ? 'password' : 'text'"
+            required>
+          <mat-icon matSuffix (click)="hide = !hide">
+            {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+      </div>
+
+
+
+
+
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+          <button [disabled]="!createAdmin.valid" class="btn-space centered" mat-raised-button color="primary">Add
+            Admin</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

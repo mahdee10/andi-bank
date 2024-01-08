@@ -1,0 +1,69 @@
+.f {
+  margin: 0 auto;
+
+
+}
+
+
+
+.s {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 16px;
+  outline: none;
+  background-color: transparent;
+  color: white !important;
+  font-family: "Open Sans", sans-serif;
+
+}
+
+.s::placeholder {
+  color: white;
+}
+
+
+mat-form-field {
+  padding: 0 !important;
+}
+
+
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  margin-left: 10px;
+  /* adjust this value as needed to create spacing between the image and text */
+  margin-right: 10px;
+}
+
+.text-container p {
+  margin: 0;
+}
+
+
+
+.t {
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  /* background-color: white; */
+  /* border: 2px #2196F3 solid; */
+}
+
+mat-form-field {
+  margin-right: 10px;
+}
+
+button.centered {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -5px;
+  /* adjust this value to center the button precisely */
+}

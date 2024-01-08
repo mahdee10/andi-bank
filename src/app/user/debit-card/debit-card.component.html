@@ -1,0 +1,177 @@
+<div class="container title mt-5">
+    <h2 class="title ">Check Your Previous Debits</h2>
+  </div>
+
+
+
+
+
+
+  
+
+    <div class="container a">
+
+      <div class="b p-4">
+      
+            
+          
+          <input class="s" (keyup)="applyFilter($event)" type="text" placeholder="Search">
+        <table
+        
+        mat-table
+        matSort
+        (matSortChange)="announceSortChange($event)"
+        [dataSource]="dataSource"
+        
+        >
+        <!-- Position Column -->
+        <ng-container matColumnDef="card_number">
+          <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          sortActionDescription="Sort by card_number"
+          >
+          Card #
+            </th>
+            <td class="d" mat-cell *matCellDef="let element">{{ element.card_number }}</td>
+          </ng-container>
+          
+          <!-- Name Column -->
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+            sortActionDescription="Sort by amount">Amount</th>
+            <td mat-cell *matCellDef="let element">{{ element.amount}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="date_obtained">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+            sortActionDescription="Sort by date_obtained">Date Obtained</th>
+            <td mat-cell *matCellDef="let element">{{ element.date_obtained }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="amount_with_interest">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+            sortActionDescription="Sort by amount_with_interest">Amount with Interest</th>
+            <td mat-cell *matCellDef="let element">{{ element.amount_with_interest }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="date_paid_before">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+            sortActionDescription="Sort by date_paid_before">Payment Deadline</th>
+            <td mat-cell *matCellDef="let element">{{ element.date_paid_before }}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="paid">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header
+            sortActionDescription="Sort by paid">Paid?</th>
+            <td mat-cell *matCellDef="let element">{{checkPaid(element)== true ? 'yes' : 'no'}}</td>
+          </ng-container>
+          
+          
+          
+          
+          
+          
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr
+          mat-row
+          (click)="({})"
+          [class.demo-row-is-clicked]=""
+          *matRowDef="let row; columns: displayedColumns"
+          ></tr>
+        </table>
+    
+          
+      
+            
+            <mat-paginator
+            
+            (page)="onPaginateChange($event)"
+            [pageSizeOptions]="[5, 10, 20]"
+            showFirstLastButtons
+            aria-label="Select page "
+            >
+          </mat-paginator>
+         
+      
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid mt-2">
+
+      <div [hidden]="!hidden">
+        <div class="alert alert-danger alert-dismissible fade show">
+          <button (click)="changeHidden()" type="button" class="btn-close" ></button>
+          <strong>Warning</strong> You cannot ask for debit card until all your previous debit cards are paid 
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container  mt-5 title">
+        <h2 >Fill the following form to get a debit card</h2>
+      </div>
+  
+      <div class="container cent">
+        <form class="register-form m-4" [formGroup]="createDebit" (ngSubmit)="onRegister()">
+  
+          <div class="row ">
+  
+        
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0 cent">
+            <mat-form-field class="example-full-width " appearance="outline">
+              <mat-label>Amount</mat-label>
+              <mat-select formControlName="amount" required>
+                <mat-option  value="100">
+                  100
+                </mat-option>
+                <mat-option  value="300">
+                  300
+                </mat-option>
+                <mat-option  value="500">
+                  500
+                </mat-option>
+                <mat-option  value="700">
+                  700
+                </mat-option>
+                <mat-option  value="900">
+                  900
+                </mat-option>
+                <mat-option  value="1000">
+                  1000
+                </mat-option>
+                <mat-option  value="2000">
+                  2000
+                </mat-option>
+              </mat-select>
+              <mat-icon matSuffix>attach_money</mat-icon>
+            </mat-form-field>
+          </div>
+  
+  
+        </div>
+        <div class="row ">
+  
+          <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2 cent">
+            <button [disabled]="!createDebit.valid" class="btn-space" mat-raised-button color="primary">Get Debit</button>
+
+          </div>
+         
+          
+        </div>
+        
+     
+  
+        </form>
+  
+      </div>

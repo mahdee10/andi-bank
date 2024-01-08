@@ -1,0 +1,98 @@
+<div class="container-fluid mt-3 ">
+    <div class="row border">
+        <div class="col-12 col-md-6 col-lg-6 info p-5 " >
+            <h2>Contact Us</h2>
+            <h2>+961 76 123 456</h2>
+            <p>
+                Phone calls may be recorded and saved for documentation and 
+                security reasons if you call us or if we call you at your request 
+                or to follow up on your question.
+            </p>
+            <p>
+                We are required to record and store our phone conversation if we 
+                speak with you about investing services.
+            </p>
+  </div>
+  <div class="col-12 col-md-6 col-lg-6  p-0">
+    <img class="call" src="../../../assets/imgs/call.jpg" alt="">
+  </div>
+
+    </div>
+
+    <div class="row border mb-5 mt-3">
+        <div class="col-12 col-md-12 col-lg-12 info p-5 mt-5 info1 ">
+            <h2>Customer service contacts</h2>
+            <p>
+                We serve private, business and institutional 
+                customers across America, Europe, Asia countries <br> If you want to become a customer 
+                or have other enquiries, <br> send us an email at andibank@andibank.com
+            </p>
+        </div>
+    </div>
+
+    <div class="row border mb-5 mt-5 justify-content-center center">
+        <div class="col-12 col-md-12 col-lg-11 info p-5 mt-5 info2 ">
+            <h2>For job Applicants</h2>
+            <p>
+                If you're experiencing technical issues in the application process please contact us. 
+            </p>
+            <a href="mailto:andi.job@andi.com" target="_blank" class="btn ">Send Email</a>
+        </div>
+    </div>
+
+    <div class="row border mb-5 mt-5 justify-content-center center">
+        <div class="col-12 col-md-12 col-lg-11 info p-5 mt-5 info2 ">
+            <h2>Suppliers</h2>
+            <p>
+                Are you a supplier? Or do you wish to become one?
+            </p>
+            <a href="mailto:andi.supplier@andi.com" target="_blank" class="btn ">Send Email</a>
+        </div>
+    </div>
+
+    <div class="row border mb-5 mt-5 justify-content-center center">
+        <div class="col-12 col-md-12 col-lg-11 info p-5 mt-5 info2 ">
+            <h2>Sustainability</h2>
+            <p>
+                Please contact us if you have questions or comments about our work with sustainability. 
+            </p>
+            <a href="mailto:andi.supplier@andi.com" target="_blank" class="btn ">Send Email</a>
+        </div>
+    </div>
+
+    <div class="row border mb-5 mt-5 justify-content-center center">
+        <div class="col-12 col-md-12 col-lg-11 info p-5 mt-5 info2 ">
+            <h2>Press contacts</h2>
+            <p>
+                Journalists are welcome to contact our press 
+                department on email <a href="mailto:andibank.press@andibank.com">andibank.press@andibank.com</a>
+                <br> You are also welcome to contact us directly on +961 00 000 000.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row mt-5 title">
+        <h1>Our Employees</h1>
+       </div>
+
+       <div class="row mt-5 "[@listAnimation]="employees">
+		<div class="col-6 col-md-3 col-lg-3 mt-3" *ngFor="let employee of employees">
+			<div class="card img-hover-zoom">
+				<img class="card-img-top"  src="../../../assets/imgs/employees/{{employee.id}}.jpg" alt="Card image">
+				<div class="card-body">
+				  <h4 class="card-title">{{employee.name}}</h4>
+				  <p class="card-text">{{employee.position}}</p>
+				  <p class="card-text">Email: {{employee.email}}</p>
+				  <p class="card-text">Phone: {{employee.phone}}</p>
+				  <!-- <button class="btn btn-primary" (click) = "watch()">Watch Now</button> -->
+				  <!-- <br><span style="color:red; font-weight:bold" *ngIf="movie.fav">Recommended</span> -->
+				</div>
+			</div>
+			<br>
+		</div>
+	</div>
+</div>
+
+
+<app-footer></app-footer>

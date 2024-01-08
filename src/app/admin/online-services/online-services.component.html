@@ -1,0 +1,19 @@
+<div class="container-fluid ">
+	<div class="row  title text-center">
+		<h1>Change Services</h1>
+	</div>
+
+	<div class="row mt-5 " [@listAnimation]="services">
+		<div class="col-6 col-md-3 col-lg-4 mt-3" *ngFor="let s of services">
+			<div class="card img-hover-zoom">
+				<img class="card-img-top" src="../../../assets/serImg/{{s.s_type}}.jpg" alt="Card image">
+				<div class="card-body text-center">
+					<h4 class="card-title">{{s.s_type}}</h4>
+					<br><button (click)="onFreeze(s)" class="btn btn-danger">{{ s.is_freezed == true ? 'unfreeze' :
+						'freeze' }}</button>
+				</div>
+			</div>
+			<br>
+		</div>
+	</div>
+</div>

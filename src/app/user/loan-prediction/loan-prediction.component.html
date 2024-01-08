@@ -1,0 +1,174 @@
+<div [hidden]="!hide" class="b">
+
+  <div class="center">
+    <div class="ring"></div>
+    <span>Predicting...</span>
+  </div>
+
+</div>
+
+
+
+
+<div [hidden]="title" class="container a">
+  <div class="one1"></div>
+  <div class="two1"></div>
+  <div class="three1"></div>
+  <h2>Fill the following form to predict your chance to get a loan</h2>
+</div>
+<div [hidden]="!good" class="container ">
+  <div class="alert alert-success">
+    <strong>Great!</strong> You have high chance to get the loan. Go ahead and request your loan
+  </div>
+</div>
+
+<div [hidden]="!bad" class="container a">
+  <div class="alert alert-danger">
+    <strong>Bad News!</strong> You have low chance to get the loan. But you can try
+  </div>
+</div>
+
+<div [hidden]="hide" class="container">
+  <form class="register-form m-4" [formGroup]="createPredict" (ngSubmit)="onRegister()">
+
+
+
+    <div class="row ">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Income</mat-label>
+          <input matInput formControlName="income" required>
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input matInput formControlName="age" required>
+          <mat-icon matSuffix>face</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Experience</mat-label>
+          <input matInput formControlName="experience" required>
+          <mat-icon matSuffix>call_made</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Profession</mat-label>
+          <mat-select formControlName="profession_num" required>
+            <mat-option *ngFor="let k of key_profession;" [value]="k">
+              {{profession[k]}}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>work</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>City</mat-label>
+          <mat-select formControlName="city_num" required>
+            <mat-option *ngFor="let k of key_city;" [value]="k">
+              {{city[k]}}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>flag</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>State</mat-label>
+          <mat-select formControlName="state_num" required>
+            <mat-option *ngFor="let k of key_state;" [value]="k">
+              {{state[k]}}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>flag</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row ">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Current Job Year</mat-label>
+          <input matInput formControlName="current_job_year" required>
+          <mat-icon matSuffix>work</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Current House year</mat-label>
+          <input matInput formControlName="current_house_year" required>
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Married?</mat-label>
+          <mat-select formControlName="is_married" required>
+            <mat-option [value]="1">
+              yes
+            </mat-option>
+            <mat-option [value]="0">
+              no
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>people</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 mb-2 p-0">
+
+        <section class="example-section">
+          <label class="example-margin">Do you have a house?</label>
+          <mat-radio-group formControlName="is_house_owner">
+            <mat-radio-button class="example-margin" [value]="2">Owned</mat-radio-button>
+            <mat-radio-button class="example-margin" [value]="1">Rented</mat-radio-button>
+            <mat-radio-button class="example-margin" [value]="0">None</mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 mb-2 p-0">
+
+        <section class="example-section">
+          <label class="example-margin">Do you have a car?</label>
+          <mat-radio-group formControlName="is_car_owner">
+            <mat-radio-button class="example-margin" [value]="1">Yes</mat-radio-button>
+            <mat-radio-button class="example-margin" [value]="0">No
+            </mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2 p-0">
+        <button [disabled]="!createPredict.valid" class="btn-space" mat-raised-button color="primary">Predict</button>
+      </div>
+
+
+    </div>
+
+
+
+  </form>
+
+</div>

@@ -1,0 +1,71 @@
+@media screen and (max-width:576px){
+    .card{
+        height: 100vh;
+        background-color: transparent;
+        border: none; 
+        color: white;
+        padding: 20px !important;
+    }
+
+:host {
+    display:block;
+    background: linear-gradient(to top, #9198e5 ,#4c00ff 33%,#4c00ff 100%) ;
+  }
+  .btn{
+    background-color: #4c00ff;
+    border: white 1px solid;
+  }
+}
+
+@media screen and (min-width:576px){
+
+ .card{
+    border: 2px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: -webkit-linear-gradient(to right, #363795, #005C97);
+    background: linear-gradient(to right, #363795, #005C97); 
+    color: white;
+
+}
+
+.btn{
+    background-color: #363795;
+    border: solid white 1px;
+}
+
+}
+
+.border{
+    border:none !important;
+    padding: 0px;
+    color: white;
+}
+
+.card-footer a{
+
+    text-decoration: none !important;
+    color: white !important;
+}
+
+.card-footer{
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+
+.card-footer a:hover{
+    color: yellow !important;
+}
+
+:host {
+    display:block;
+    background: linear-gradient(to right, #363795, #005C97); 
+}
+
+.full{
+    height: 100vh;
+    
+}

@@ -1,0 +1,100 @@
+.a{
+    margin-top: 100px;
+}
+.border{
+    margin: 0.3px;
+    border: none !important;
+    /* text-align: center; */
+}
+h4{
+    text-align: center;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px black; 
+  }
+
+  .card:hover{
+    transform: scale(1.05);
+  }
+  .card:hover img{
+
+    filter: none;
+  }
+
+  .card-img-top{
+    height: 100%;
+    filter: blur(2px);
+  }
+  
+  img{
+    height: 100%;
+    width: 100%;
+  }
+
+  h3{
+    color: #002337;
+  }
+  .container-fluid{
+    color: white;
+
+    text-align: center;
+  }
+
+  .container-fluid h1{
+
+    text-align: center;
+  }
+
+  .border{
+    margin: 0.3px ;
+    border: none !important;
+    
+}
+
+.border1{
+  margin: 0.3px ;
+  border: none !important;
+  background-color: #002337;
+  font-family: "danske_humanMediumIt",serif;
+
+}
+h4{
+  line-height: 3rem;
+}
+
+.btn{
+  background-color: #f0f7fa;
+}
+
+.btn{
+  background-color: #f0f7fa;
+  color: #002337;
+  border: #c3d0d6 1px solid;
+}
+.btn:hover {
+
+  background-color: #d0e3ea;
+}
+.chart{
+  margin: 0.3px ;
+  background-color: #ebe8e4;
+  color: #002337;
+  font-family: "danske_humanMediumIt",serif;
+  font-size: 2rem;
+}
+.news{
+  margin: 0.3px ;
+  border: none !important;
+  background-color: #e7f1f7;
+  font-family: "danske_humanMediumIt",serif;
+  color: #002337;
+  font-size: x-large;
+}
+h1{
+  text-align: center;
+  font-family: "danske_humanMediumIt",serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #002337;
+  font-size: 3rem;}

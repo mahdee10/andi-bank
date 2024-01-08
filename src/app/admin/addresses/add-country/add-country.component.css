@@ -1,0 +1,24 @@
+.addContainer {
+  background-color: #e6ebf0;
+
+}
+
+mat-icon {
+  color: black;
+}
+
+
+.modal-about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.title {
+  margin: 0;
+}
+
+
+/* In this example, the align-items: center property centers the content vertically, while the justify-content: space-between property pushes the title to the left and the button to the right end of the container. The margin: 0 property removes any default margin from the title, making it align flush left. Again, you can adjust the padding and height values according to your needs. */

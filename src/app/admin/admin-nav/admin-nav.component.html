@@ -1,0 +1,57 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+
+
+    <div class="container profile p-4">
+      <img src="../../../assets/imgs/profile.jpg" alt="">
+      <div class="text-container">
+        <p class=" name">{{name}}
+          <br>
+
+        </p>
+      </div>
+    </div>
+
+    <div class="balance mt-1">
+
+    </div>
+
+
+    <a class="try f profile" routerLink="address"><mat-icon style="color: #5ecab3 !important;"
+        class="text-container">location_city</mat-icon> Countries & Cities </a>
+
+    <a class="try profile" routerLink="services"><mat-icon style="color: #9a5cae !important;" class="text-container ">
+        room_service</mat-icon>Services</a>
+    <a class="try profile" routerLink="loan"><mat-icon style="color: #79a2ee !important;" class="text-container ">
+        attach_money</mat-icon>Loans</a>
+    <a class="try profile" routerLink="add"><mat-icon style="color: #e8a838 !important;" class="text-container ">
+        supervised_user_circle</mat-icon>Add Admin</a>
+    <a class="try profile" routerLink="users"><mat-icon style="color: #5ecab3 !important;"
+        class="text-container">people_outline</mat-icon>Users</a>
+    <a class="try profile" routerLink="transactions"><mat-icon style="color: #9a5cae !important;"
+        class="text-container">transform</mat-icon>Transactions</a>
+    <a class="try profile" (click)="logout()" routerLink="/client"><mat-icon style="color: #dd496f !important;"
+        class="text-container">exit_to_app</mat-icon>Logout</a>
+
+  </mat-sidenav>
+  <mat-sidenav-content class="mt-3">
+    <mat-toolbar>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+
+
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+
+
+
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

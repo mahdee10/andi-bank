@@ -1,0 +1,31 @@
+.info{
+    background-color: #002337;
+    color: white;
+    /* text-align: center; */
+}
+.row{
+    padding: 20px;
+}
+
+.copyright{
+    text-align: center;
+
+}
+
+.info2{
+    line-height: 2rem;
+    font-size: smaller;
+}
+
+img{
+    position: absolute;
+    right:10%;
+    width: 10%;
+    height: 13%;
+}
+@media screen and (min-width:576px){
+    .container-fluid{
+        margin-top: 150px;
+    }
+    
+}

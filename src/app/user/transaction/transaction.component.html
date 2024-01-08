@@ -1,0 +1,188 @@
+<!-- <div class="container">
+    <h2 class="title mb-5">Perform New Transaction</h2>
+  </div> -->
+
+<!-- <div class="container-fluid mb-5 ">
+  <div class="row border">
+    <div class="col-12 col-md-6 col-lg-6 info p-5 " >
+        <h2>Transaction</h2>
+        <p>
+          Welcome to your transaction page.From this page, you can easily monitor your account balances, review transaction details, 
+          and stay up-to-date on your financial activity. Whether you want to view your income, expenses, or transfers, 
+          this page provides you with all the information you need to manage your finances effectively.
+        </p>
+
+</div>
+<div class="col-12 col-md-6 col-lg-6  p-0">
+<img class="call" src="../../../assets/imgs/transaction.jpg" alt="">
+</div>
+
+</div>
+</div> -->
+
+
+<!-- <div class="container title">
+    <h2 class="title  mb-5">Check Your Card Balance Before Performing a Transaction</h2>
+  </div> -->
+
+<!-- <div class="container-fluid px-4 mb-5 aligns-items-center">
+
+    <div class="row border">
+        <div class="col-12 col-md-6 col-lg-3  " >
+
+        </div>
+        <div class="col-12 col-md-4 col-lg-4 ccard" >
+          <div class="card c1">
+            <div class="row header">
+              <div class="col-6 " >
+                <mat-icon >credit_card</mat-icon>
+              </div>
+              <div class="col-6 wifi" >
+                <mat-icon> rss_feed</mat-icon>
+              </div>
+
+            </div>
+              <div class="card-body">
+                
+                <div class="row">
+                  <p class="card-title col-6"><span>NAME</span><br>{{person.name}}</p>
+                  <p class="card-title col-6 num"><span>SSN</span><br>{{person.SSN}}</p>
+
+                </div>
+              </div>
+              <div class="card-footer">${{person.balance}}<br><span>Balance</span></div>
+                
+          </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-4  " >
+        <div class="card c2">
+          <div class="row header">
+            <div class="col-6 " >
+              <mat-icon >credit_card</mat-icon>
+            </div>
+            <div class="col-6 wifi" >
+              <mat-icon> rss_feed</mat-icon>
+            </div>
+
+          </div>
+            <div class="card-body">
+              
+              <div class="row">
+                <p class="card-title col-6"><span>NAME</span><br>{{person.name}}</p>
+                <p class="card-title col-6 num"><span>SSN</span><br>{{person.SSN}}</p>
+
+              </div>
+            </div>
+            <div class="card-footer f2">${{person.balance}}<br><span>Balance</span></div>
+              
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+  </div> -->
+
+
+
+
+<div class="container title ">
+  <h2 class="title ">Check Your Previous Transactions</h2>
+</div>
+
+<div class="container a ">
+
+  <div class="b p-4">
+
+
+
+
+    <input class="s" (keyup)="applyFilter($event)" type="text" placeholder="Search">
+    <table mat-table matSort (matSortChange)="announceSortChange($event)" [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by date">
+          Date
+        </th>
+        <td class="d" mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="sender_SSN">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by sender_SSN">Sender Name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.sender_SSN.name}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="reciever_details">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by reciever_details">Receiver
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.reciever_details }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by amount">Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+      </ng-container>
+
+
+
+
+
+
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row (click)="({})" [class.demo-row-is-clicked]="" *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+
+
+
+    <mat-paginator (page)="onPaginateChange($event)" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+      aria-label="Select page ">
+    </mat-paginator>
+
+
+  </div>
+</div>
+
+
+
+
+<div class="container  mt-5 title">
+  <h2>Fill the following form in order to perform a new transaction</h2>
+</div>
+
+
+
+
+
+<div class="container mb-5 t">
+  <div class="f p-3">
+
+    <form class="register-form m-4" [formGroup]="createTransaction" (ngSubmit)="onRegister()">
+
+      <mat-form-field class="example-full-width text-container" appearance="outline">
+        <mat-label>Amount</mat-label>
+        <input matInput formControlName="amount" required>
+        <mat-icon matSuffix>attach_money</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width text-container" appearance="outline">
+        <mat-label>Reciever SSN</mat-label>
+        <input matInput formControlName="r_SSN" required>
+        <mat-icon matSuffix>person_search</mat-icon>
+      </mat-form-field>
+
+      <button [disabled]="!createTransaction.valid" class="btn-space centered" mat-raised-button
+        color="primary">Transfer</button>
+
+
+    </form>
+  </div>
+</div>

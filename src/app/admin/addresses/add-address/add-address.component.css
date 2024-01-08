@@ -1,0 +1,21 @@
+.addContainer {
+  background-color: #e6ebf0;
+
+}
+
+mat-icon {
+  color: black;
+}
+
+
+.modal-about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.title {
+  margin: 0;
+}

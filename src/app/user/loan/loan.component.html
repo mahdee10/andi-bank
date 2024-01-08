@@ -1,0 +1,155 @@
+<div class="container-fluid">
+
+  <div>
+    <div class="alert alert-danger alert-dismissible fade show">
+
+      <strong>Announcement!</strong> <a routerLink="../predict" class="">
+
+        Check your chance to get a loan
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div [hidden]="!hidden" class="container ">
+  <div class="alert alert-danger">
+    <strong>Note!</strong> You cannot ask for loan until you get the response of the last submitted loan.
+  </div>
+</div>
+<div class="container  mt-5">
+  <h2>Fill the following form to request a loan</h2>
+</div>
+
+
+<div class="container ">
+  <form class="register-form m-4" [formGroup]="createLoan" (ngSubmit)="onRegister()">
+
+
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-6 col-sm-12 mb-2 p-0">
+
+        <label for="">
+          <h5>How much time you need to pay the loan</h5>
+        </label>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Years</mat-label>
+          <mat-select formControlName="year">
+            <mat-option value="0">
+              0
+            </mat-option>
+            <mat-option value="1">
+              1
+            </mat-option>
+            <mat-option value="2">
+              2
+            </mat-option>
+            <mat-option value="3">
+              3
+            </mat-option>
+            <mat-option value="4">
+              4
+            </mat-option>
+            <mat-option value="5">
+              5
+            </mat-option>
+            <mat-option value="6">
+              6
+            </mat-option>
+            <mat-option value="7">
+              7
+            </mat-option>
+            <mat-option value="8">
+              8
+            </mat-option>
+            <mat-option value="9">
+              9
+            </mat-option>
+            <mat-option value="10">
+              10
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>date_range</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Months</mat-label>
+          <mat-select formControlName="month">
+            <mat-option value="0">
+              0
+            </mat-option>
+            <mat-option value="1">
+              1
+            </mat-option>
+            <mat-option value="2">
+              2
+            </mat-option>
+            <mat-option value="3">
+              3
+            </mat-option>
+            <mat-option value="4">
+              4
+            </mat-option>
+            <mat-option value="5">
+              5
+            </mat-option>
+            <mat-option value="6">
+              6
+            </mat-option>
+            <mat-option value="7">
+              7
+            </mat-option>
+            <mat-option value="8">
+              8
+            </mat-option>
+            <mat-option value="9">
+              9
+            </mat-option>
+            <mat-option value="10">
+              10
+            </mat-option>
+            <mat-option value="11">
+              11
+            </mat-option>
+            <mat-option value="12">
+              12
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>date_range</mat-icon>
+        </mat-form-field>
+      </div>
+
+
+    </div>
+
+    <div class="row ">
+
+      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount" required>
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mb-2 p-0">
+        <button [disabled]="!createLoan.valid" class="btn-space" mat-raised-button color="primary">request loan</button>
+      </div>
+
+
+    </div>
+
+
+
+  </form>
+
+</div>

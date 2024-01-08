@@ -1,0 +1,24 @@
+<div class="container title ">
+  <h2>Our Services</h2>
+</div>
+
+
+
+<div class="container" [@listAnimation]="services">
+  <div class="row mt-5 ">
+    <div class="col-6 col-md-3 col-lg-4 mt-3" *ngFor="let result of services">
+      <div class="card img-hover-zoom">
+        <img class="card-img-top" src="../../../assets/serImg/{{result.s_type}}.jpg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{result.s_type}}</h4>
+
+          <button [disabled]="result.is_freezed" class="btn btn-primary" (click)="submit(result.s_number)"
+            (click)="downloadFile(result.s_type)">{{ result.is_freezed == true ? 'Not available' : 'Download'
+            }}</button>
+
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

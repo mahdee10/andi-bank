@@ -1,0 +1,184 @@
+
+
+<div class="container-fluid  ">
+
+    <div class="row border">
+      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
+        <div class="card c2 p-5">
+            <div class="text-center">
+                <h2>Register</h2>
+                <h6>Please fill the Information Below</h6>
+              </div>
+            <div class="card-body">
+              <!--  -->
+              <form class="register-form m-4" [formGroup]="register" (ngSubmit)="onRegister()">
+
+                <div class="row ">
+
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2 p-0">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>SSN</mat-label>
+                      <input  matInput placeholder="9 digits"  formControlName="SSN" required mask="000000000">
+                      <mat-icon matSuffix>person_search</mat-icon>
+                    </mat-form-field>
+                  </div>
+              
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2 p-0">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input  matInput formControlName="first_name" required>
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-error
+                    *ngIf="register.get('first_name').touched">
+                    Enter only characters
+                  </mat-error>
+                  </mat-form-field>
+                </div>
+
+
+              </div>
+
+              <div class="row ">
+              
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2 p-0">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input  matInput formControlName="last_name" required>
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-error
+                    *ngIf="register.get('last_name').touched">
+                    Enter only characters
+                  </mat-error>
+                  </mat-form-field>
+                </div>
+            
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender" required>
+                      <mat-option  value="m">
+                        Male
+                      </mat-option>
+                      <mat-option  value="f">
+                        Female
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>person_pin</mat-icon>
+                  </mat-form-field>
+                </div>
+
+
+
+
+              </div>
+
+
+              <div class="row ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2 p-0">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error
+                    *ngIf="register.get('email').hasError('required') || register.get('email').touched">
+                    Enter a valid email
+                  </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="upper&lower letters and digit" formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                    <mat-icon matSuffix (click)="hide = !hide">
+                      {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+
+              <div class="row ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Nationality</mat-label>
+                    <mat-select formControlName="nationality_country_code" required>
+                      <mat-option *ngFor="let nationality of nationalities" [value]="nationality.country_code">
+                        {{nationality.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-error *ngIf="register.get('nationality_country_code').hasError('required')">
+                      Nationality is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2">
+                  <mat-form-field class="example-full-width " appearance="outline">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="DOB">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+
+              <div class="row ">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 mb-2">
+
+                  <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Address</mat-label>
+                    <mat-select formControlName="address_zip_code" required>
+                      <mat-option *ngFor="let address of addresses" [value]="address.zip_code">
+                        {{address.name}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-error *ngIf="register.get('address_zip_code').hasError('required')">
+                      Address is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+
+
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-5">
+                  <label>Upload Passport</label>
+                  <app-file-upload formControlName="passport_file" required></app-file-upload>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                  <button [disabled]="!register.valid" class="btn-space" mat-raised-button color="primary">Register</button>
+                </div>
+              </div>
+
+            </form>
+
+            <!--  -->
+            </div>
+              
+        </div>
+    </div>
+
+    <div class="col-6">
+      <img src="../../../assets/imgs/register.jpg" alt="">
+    </div>
+
+
+
+
+    </div>
+
+
+  </div>

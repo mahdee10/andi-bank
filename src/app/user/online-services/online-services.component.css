@@ -1,0 +1,56 @@
+.carousel-inner {
+  height: fit-content;
+}
+
+.item,
+img {
+  height: 250px !important;
+  width: 100% !important;
+}
+
+.carousel-caption {
+  color: #002337;
+  font-weight: bolder;
+}
+
+* {
+
+  text-align: center;
+}
+
+
+
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+
+}
+
+
+.card-content {
+  padding: 16px;
+}
+
+.card-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.title {
+  font-family: "Open Sans", sans-serif;
+
+}
+
+button {
+  background-color: #3ea6f1;
+  border: none;
+}

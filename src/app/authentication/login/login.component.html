@@ -1,0 +1,50 @@
+
+
+<div class="container-fluid px-4 mb-5 full">
+
+    <div class="row border">
+      <div class="col-12 " >
+        <div class="card c2 p-5">
+            <div class="text-center">
+                <h2>Login</h2>
+                <h6>Please enter your email and password</h6>
+              </div>
+            <div class="card-body">
+              <form [formGroup]="login" class="form">
+
+                <div class="row">
+                <div class="col-12">Email</div>
+                <div class="col-12"><input type="text" class="form-control"
+                name="email" formControlName="email"></div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-12">Password</div>
+                <div class="col-12"><input type="text" class="form-control"
+                
+                name="password" formControlName="password"></div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-md-12">
+                <button class="btn btn-primary" (click)="onSubmit()">Login</button>
+                </div>
+                </div>
+                </form>
+
+
+
+            <!--  -->
+            </div>
+            <div class="card-footer"><a routerLink="../register">Register</a></div>
+              
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+
+  </div>

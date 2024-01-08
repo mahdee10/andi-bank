@@ -1,0 +1,92 @@
+<div class="container-fluid px-4 mb-3 full">
+
+  <div class="row border">
+    <div class="col-12 ">
+      <div class="card c2 px-5 pt-4">
+        <div class="text-center">
+          <h2>Update Profile</h2>
+        </div>
+        <div class="card-body">
+
+          <form class="register-form m-4" [formGroup]="updateUser" (ngSubmit)="onRegister()">
+
+            <div class="row ">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="first_name" required>
+                  <mat-icon matSuffix>face</mat-icon>
+
+                </mat-form-field>
+              </div>
+
+
+            </div>
+
+            <div class="row ">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="last_name" required>
+                  <mat-icon matSuffix>face</mat-icon>
+
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email" required>
+                  <mat-icon matSuffix>email</mat-icon>
+
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                  <mat-icon matSuffix (click)="hide = !hide">
+                    {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mb-2 p-0">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Address</mat-label>
+                  <mat-select formControlName="address_zip_code" required>
+                    <mat-option *ngFor="let address of addresses" [value]="address.zip_code">
+                      {{address.name}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-icon matSuffix>flag</mat-icon>
+
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <button class="btn-space" mat-raised-button color="primary">Update</button>
+              </div>
+            </div>
+
+          </form>
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
